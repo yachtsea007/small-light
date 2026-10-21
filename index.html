@@ -1,24 +1,58 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Small Light</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      background: #f8fafc;
-      color: #333;
-      padding: 80px 20px;
-    }
-    h1 { color: #2563eb; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Small Light | 平和な未来へ</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f8fc;color:#24364b;line-height:1.8}
+header{background:linear-gradient(135deg,#102b47,#27658c);color:white;text-align:center;padding:90px 20px}
+header h1{font-size:clamp(44px,8vw,76px);margin:0}
+header h2{font-size:clamp(20px,4vw,30px);font-weight:normal;color:white}
+header p{color:#e4eff8}
+nav{background:#173c60;text-align:center;padding:15px}
+nav a{color:white;margin:0 12px;text-decoration:none}
+main{max-width:950px;margin:auto;padding:25px 18px}
+section{background:white;padding:30px;margin:25px 0;border-radius:14px}
+h2{color:#194b77}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+article{background:#edf4fa;padding:22px;border-radius:12px}
+footer{background:#102b47;color:white;text-align:center;padding:25px}
+</style>
 </head>
 <body>
-  <h1>Small Light</h1>
-  <h2>小さな光から、未来へ。</h2>
-  <p>Small Light のホームページへようこそ。</p>
-  <p>現在、ホームページを準備しています。</p>
+<header>
+<h1>Small Light</h1>
+<h2>小さな光から、平和な未来へ。</h2>
+<p>From Small Lights to a Peaceful Future.</p>
+<p>世界中の若者が語り合い、ともに行動する。</p>
+</header>
+<nav>
+<a href="#vision">理念</a>
+<a href="#activities">活動</a>
+<a href="#join">参加</a>
+</nav>
+<main>
+<section id="vision">
+<h2>私たちの理念 | Our Vision</h2>
+<p>Small Light は、世界中の若者が国籍、民族、宗教、文化、思想の違いを超えて対話し、戦争のない平和な社会を目指す場所です。</p>
+<p>互いの声に耳を傾け、違いを尊重し、平和のために共に考え、行動します。</p>
+<p>一人の小さな光が、次の光をともす。その光が世界中に広がることを願っています。</p>
+</section>
+<section id="activities">
+<h2>私たちの活動 | Our Activities</h2>
+<div class="cards">
+<article><h3>対話 | Dialogue</h3><p>世界中の若者が平和について自由に語り合い、互いの理解を深めます。</p></article>
+<article><h3>行動 | Action</h3><p>対話から生まれたアイデアを具体的な平和活動へとつなげます。</p></article>
+</div>
+</section>
+<section id="join">
+<h2>共に未来をつくる | Join Us</h2>
+<p>Small Light は、平和を願うすべての人に開かれた場所を目指しています。</p>
+<p>現在、国際的な対話と交流の仕組みを準備しています。</p>
+</section>
+</main>
+<footer>Small Light — From Small Lights to a Peaceful Future.</footer>
 </body>
 </html>
