@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -7,10 +8,13 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#f5f8fc;color:#24364b;line-height:1.8}
-header{background:linear-gradient(135deg,#102b47,#27658c);color:white;text-align:center;padding:90px 20px}
+header{background:linear-gradient(135deg,#102b47,#27658c);color:white;text-align:center;padding:65px 20px}
 header h1{font-size:clamp(44px,8vw,76px);margin:0}
 header h2{font-size:clamp(20px,4vw,30px);font-weight:normal;color:white}
 header p{color:#e4eff8}
+.languages{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.languages button{background:white;color:#102b47;border:2px solid transparent;border-radius:7px;padding:9px 17px;cursor:pointer;font-size:15px}
+.languages button.active{border-color:#f7d878;background:#fff5d6;font-weight:bold}
 nav{background:#173c60;text-align:center;padding:15px}
 nav a{color:white;margin:0 12px;text-decoration:none}
 main{max-width:950px;margin:auto;padding:25px 18px}
@@ -23,36 +27,114 @@ footer{background:#102b47;color:white;text-align:center;padding:25px}
 </head>
 <body>
 <header>
+<div class="languages" aria-label="Language selection">
+<button type="button" data-lang="ja" class="active" aria-pressed="true">日本語</button>
+<button type="button" data-lang="en" aria-pressed="false">English</button>
+<button type="button" data-lang="zh" aria-pressed="false">中文</button>
+</div>
 <h1>Small Light</h1>
-<h2>小さな光から、平和な未来へ。</h2>
+<h2 id="tagline"></h2>
 <p>From Small Lights to a Peaceful Future.</p>
-<p>世界中の若者が語り合い、ともに行動する。</p>
+<p id="intro"></p>
 </header>
 <nav>
-<a href="#vision">理念</a>
-<a href="#activities">活動</a>
-<a href="#join">参加</a>
+<a href="#vision" id="navVision"></a>
+<a href="#activities" id="navActivities"></a>
+<a href="#join" id="navJoin"></a>
 </nav>
 <main>
 <section id="vision">
-<h2>私たちの理念 | Our Vision</h2>
-<p>Small Light は、世界中の若者が国籍、民族、宗教、文化、思想の違いを超えて対話し、戦争のない平和な社会を目指す場所です。</p>
-<p>互いの声に耳を傾け、違いを尊重し、平和のために共に考え、行動します。</p>
-<p>一人の小さな光が、次の光をともす。その光が世界中に広がることを願っています。</p>
+<h2 id="visionTitle"></h2>
+<p id="vision1"></p>
+<p id="vision2"></p>
+<p id="vision3"></p>
 </section>
 <section id="activities">
-<h2>私たちの活動 | Our Activities</h2>
+<h2 id="activitiesTitle"></h2>
 <div class="cards">
-<article><h3>対話 | Dialogue</h3><p>世界中の若者が平和について自由に語り合い、互いの理解を深めます。</p></article>
-<article><h3>行動 | Action</h3><p>対話から生まれたアイデアを具体的な平和活動へとつなげます。</p></article>
+<article><h3 id="dialogueTitle"></h3><p id="dialogueText"></p></article>
+<article><h3 id="actionTitle"></h3><p id="actionText"></p></article>
 </div>
 </section>
 <section id="join">
-<h2>共に未来をつくる | Join Us</h2>
-<p>Small Light は、平和を願うすべての人に開かれた場所を目指しています。</p>
-<p>現在、国際的な対話と交流の仕組みを準備しています。</p>
+<h2 id="joinTitle"></h2>
+<p id="join1"></p>
+<p id="join2"></p>
 </section>
 </main>
 <footer>Small Light — From Small Lights to a Peaceful Future.</footer>
+<script>
+const translations={
+ja:{
+tagline:"小さな光から、平和な未来へ。",
+intro:"世界中の若者が語り合い、ともに行動する。",
+navVision:"理念",navActivities:"活動",navJoin:"参加",
+visionTitle:"私たちの理念 | Our Vision",
+vision1:"Small Light は、世界中の若者が国籍、民族、宗教、文化、思想の違いを超えて対話し、戦争のない平和な社会を目指す場所です。",
+vision2:"互いの声に耳を傾け、違いを尊重し、平和のために共に考え、行動します。",
+vision3:"一人の小さな光が、次の光をともす。その光が世界中に広がることを願っています。",
+activitiesTitle:"私たちの活動 | Our Activities",
+dialogueTitle:"対話 | Dialogue",
+dialogueText:"世界中の若者が平和について自由に語り合い、互いの理解を深めます。",
+actionTitle:"行動 | Action",
+actionText:"対話から生まれたアイデアを具体的な平和活動へとつなげます。",
+joinTitle:"共に未来をつくる | Join Us",
+join1:"Small Light は、平和を願うすべての人に開かれた場所を目指しています。",
+join2:"現在、国際的な対話と交流の仕組みを準備しています。"
+},
+en:{
+tagline:"From Small Lights to a Peaceful Future.",
+intro:"Young people around the world, talking and taking action together.",
+navVision:"Vision",navActivities:"Activities",navJoin:"Join Us",
+visionTitle:"Our Vision",
+vision1:"Small Light aims to be a place where young people worldwide can engage in dialogue across differences of nationality, ethnicity, religion, culture and beliefs, working toward a world without war.",
+vision2:"We listen to one another, respect our differences, and think and act together for peace.",
+vision3:"One small light can kindle another. We hope these lights will spread across the world.",
+activitiesTitle:"Our Activities",
+dialogueTitle:"Dialogue",
+dialogueText:"Young people around the world share their thoughts about peace and deepen mutual understanding.",
+actionTitle:"Action",
+actionText:"We aim to turn ideas born through dialogue into practical activities for peace.",
+joinTitle:"Building the Future Together",
+join1:"Small Light aspires to be open to everyone who hopes for peace.",
+join2:"We are preparing ways for international dialogue and exchange."
+},
+zh:{
+tagline:"从点点微光，走向和平的未来。",
+intro:"让世界各地的年轻人共同对话、携手行动。",
+navVision:"理念",navActivities:"活动",navJoin:"参与",
+visionTitle:"我们的理念",
+vision1:"Small Light 致力于为世界各地的年轻人提供一个交流平台，跨越国籍、民族、宗教、文化和思想的差异，共同追求没有战争的和平社会。",
+vision2:"我们倾听彼此的声音，尊重差异，共同思考并为和平采取行动。",
+vision3:"一束微光可以点亮另一束微光。我们希望这些光芒传遍世界。",
+activitiesTitle:"我们的活动",
+dialogueTitle:"对话",
+dialogueText:"让世界各地的年轻人自由交流对和平的看法，增进相互理解。",
+actionTitle:"行动",
+actionText:"将对话中产生的想法转化为具体的和平行动。",
+joinTitle:"共同创造未来",
+join1:"Small Light 希望成为一个向所有热爱和平的人开放的平台。",
+join2:"我们正在筹备国际对话与交流的机制。"
+}
+};
+function setLanguage(lang){
+const t=translations[lang];
+if(!t)return;
+document.documentElement.lang=lang;
+Object.keys(t).forEach(id=>{
+const el=document.getElementById(id);
+if(el)el.textContent=t[id];
+});
+document.querySelectorAll("[data-lang]").forEach(btn=>{
+const active=btn.dataset.lang===lang;
+btn.classList.toggle("active",active);
+btn.setAttribute("aria-pressed",String(active));
+});
+}
+document.querySelectorAll("[data-lang]").forEach(btn=>
+btn.addEventListener("click",()=>setLanguage(btn.dataset.lang))
+);
+setLanguage("ja");
+</script>
 </body>
 </html>
