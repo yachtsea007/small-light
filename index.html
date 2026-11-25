@@ -137,5 +137,40 @@ btn.addEventListener("click",()=>setLanguage(btn.dataset.lang))
 setLanguage("ja");
 </script>
   
+<script>
+const forum = document.createElement("section");
+forum.id = "forum";
+forum.innerHTML = `
+<h2 id="forumTitle"></h2>
+<p id="forumText"></p>
+<p id="forumRules"></p>
+<p id="forumStatus"></p>
+`;
+document.querySelector("main").appendChild(forum);
+
+Object.assign(translations.ja, {
+forumTitle: "対話の広場 | Dialogue Forum",
+forumText: "戦争のない世界を実現するために、あなたの考えを聞かせてください。",
+forumRules: "互いの意見を尊重し、差別や誹謗中傷のない対話を大切にします。",
+forumStatus: "投稿受付の準備中です。投稿は管理者の確認後に公開します。"
+});
+
+Object.assign(translations.en, {
+forumTitle: "Dialogue Forum",
+forumText: "Share your ideas for a world without war.",
+forumRules: "Respect different opinions. Discrimination and harassment are not allowed.",
+forumStatus: "Submissions are coming soon. All posts will be reviewed before publication."
+});
+
+Object.assign(translations.zh, {
+forumTitle: "对话广场",
+forumText: "请分享您对实现无战争世界的想法。",
+forumRules: "尊重不同意见，拒绝歧视和人身攻击。",
+forumStatus: "投稿功能正在准备中。所有投稿经管理员审核后发布。"
+});
+
+setLanguage("ja");
+</script>
+
 </body>
 </html>
