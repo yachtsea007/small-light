@@ -171,6 +171,24 @@ forumStatus: "投稿功能正在准备中。所有投稿经管理员审核后发
 
 setLanguage("ja");
 </script>
+<script>
+const postButton = document.createElement("a");
+postButton.id = "postButton";
+postButton.href = "https://forms.gle/R3tkh9ZjtEFPs8M47";
+postButton.target = "_blank";
+postButton.rel = "noopener noreferrer";
+postButton.style.cssText = "display:inline-block;background:#194b77;color:white;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:bold;margin-top:15px;";
+forum.appendChild(postButton);
 
+translations.ja.postButton = "意見を投稿する";
+translations.en.postButton = "Share Your Ideas";
+translations.zh.postButton = "发表您的意见";
+
+translations.ja.forumStatus = "投稿内容は管理者の確認後に公開します。";
+translations.en.forumStatus = "All submissions will be reviewed before publication.";
+translations.zh.forumStatus = "所有投稿经管理员审核后发布。";
+
+setLanguage("ja");
+</script>
 </body>
 </html>
