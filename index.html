@@ -190,5 +190,22 @@ translations.zh.forumStatus = "所有投稿经管理员审核后发布。";
 
 setLanguage("ja");
 </script>
+<script>
+const approvedPosts = document.createElement("div");
+approvedPosts.id = "approvedPosts";
+approvedPosts.style.cssText = "margin-top:30px;padding:20px;background:#f4f8fb;border-radius:10px;text-align:left;";
+approvedPosts.innerHTML = '<h3 id="approvedTitle"></h3><p id="approvedMessage"></p>';
+forum.appendChild(approvedPosts);
+
+translations.ja.approvedTitle = "世界から寄せられた意見";
+translations.en.approvedTitle = "Voices from Around the World";
+translations.zh.approvedTitle = "来自世界各地的声音";
+
+translations.ja.approvedMessage = "承認された投稿をここに掲載します。";
+translations.en.approvedMessage = "Approved contributions will appear here.";
+translations.zh.approvedMessage = "审核通过的投稿将在此展示。";
+
+setLanguage("ja");
+</script>
 </body>
 </html>
