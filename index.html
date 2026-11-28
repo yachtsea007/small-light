@@ -237,7 +237,39 @@ translations.en.thirdPost = "[Test post - Japan] I believe that respecting our d
 translations.zh.thirdPost = "【测试投稿・日本】我认为，为了世界和平，尊重彼此的差异并持续开展对话非常重要。";
 
 setLanguage("ja");
+const forumRules = document.createElement("div");
+forumRules.style.cssText = "margin-top:25px;padding:20px;background:#fff9e8;border-radius:10px;";
+forumRules.innerHTML = '<h3 id="rulesTitle"></h3><p id="rule1"></p><p id="rule2"></p><p id="rule3"></p><p id="rule4"></p><p id="rule5"></p>';
+forum.appendChild(forumRules);
 
+Object.assign(translations.ja, {
+  rulesTitle: "投稿・参加ルール",
+  rule1: "1. 異なる意見や価値観を尊重しましょう。",
+  rule2: "2. 誹謗中傷、差別、脅迫を禁止します。",
+  rule3: "3. 暴力や戦争を助長する投稿を禁止します。",
+  rule4: "4. 個人情報を投稿しないでください。",
+  rule5: "5. 投稿は管理者が確認し、承認したものを公開します。"
+});
+
+Object.assign(translations.en, {
+  rulesTitle: "Community Guidelines",
+  rule1: "1. Respect different opinions and values.",
+  rule2: "2. Harassment, discrimination and threats are prohibited.",
+  rule3: "3. Posts promoting violence or war are prohibited.",
+  rule4: "4. Do not share personal information.",
+  rule5: "5. Only submissions approved by the moderator will be published."
+});
+
+Object.assign(translations.zh, {
+  rulesTitle: "投稿与参与规则",
+  rule1: "1. 尊重不同的意见和价值观。",
+  rule2: "2. 禁止诽谤、歧视和威胁。",
+  rule3: "3. 禁止发布鼓吹暴力或战争的内容。",
+  rule4: "4. 请勿发布个人信息。",
+  rule5: "5. 所有投稿须经管理员审核批准后方可发布。"
+});
+
+setLanguage("ja");
 </script>
  <style>
 html[lang="en"] header h2 + p {
