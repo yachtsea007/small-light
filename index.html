@@ -270,6 +270,36 @@ Object.assign(translations.zh, {
 });
 
 setLanguage("ja");
+const privacyBox = document.createElement("div");
+privacyBox.style.cssText = "margin-top:25px;padding:20px;background:#eef5f1;border-radius:10px;";
+privacyBox.innerHTML = '<h3 id="privacyTitle"></h3><p id="privacy1"></p><p id="privacy2"></p><p id="privacy3"></p><p id="privacy4"></p>';
+forum.appendChild(privacyBox);
+
+Object.assign(translations.ja, {
+  privacyTitle: "プライバシー保護方針",
+  privacy1: "Small Lightは、参加者のプライバシーを尊重します。",
+  privacy2: "氏名、住所、電話番号、メールアドレスなどの個人情報は投稿しないでください。",
+  privacy3: "投稿内容は管理者が確認し、承認された意見のみを公開します。",
+  privacy4: "投稿の受付にはGoogle Formsを利用しています。公開された意見は世界中の人が閲覧できます。"
+});
+
+Object.assign(translations.en, {
+  privacyTitle: "Privacy Policy",
+  privacy1: "Small Light respects the privacy of all participants.",
+  privacy2: "Please do not submit personal information such as names, addresses, phone numbers or email addresses.",
+  privacy3: "All submissions are reviewed by the moderator. Only approved contributions will be published.",
+  privacy4: "We use Google Forms to receive submissions. Published contributions can be viewed worldwide."
+});
+
+Object.assign(translations.zh, {
+  privacyTitle: "隐私保护政策",
+  privacy1: "Small Light尊重所有参与者的隐私。",
+  privacy2: "请勿提交姓名、住址、电话号码、电子邮件地址等个人信息。",
+  privacy3: "所有投稿均由管理员审核，仅发布获得批准的内容。",
+  privacy4: "我们使用Google Forms接收投稿。已发布的内容可供世界各地的人浏览。"
+});
+
+setLanguage("ja");
 </script>
  <style>
 html[lang="en"] header h2 + p {
